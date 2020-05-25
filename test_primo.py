@@ -7,9 +7,9 @@ import re
 
 
 def save_to_txt(book_in_libs):
-    '''Save an information in a txt file where the book can be borrow and where
-    is currently borrowed. Before saving results to a txt file parse result to
-    be easier to understand.'''
+    '''Third part of the app. Save an information in a txt file where the book
+    can be borrow and where is currently borrowed. Before saving results to a
+    txt file parse result to be easier to understand.'''
     result_strip = book_in_libs.replace('\n', ' ')
 
     result_available = re.findall(r'\d{2}\s-\s\w+ Dostępny', result_strip)
@@ -45,8 +45,8 @@ def book_details(driver):
 def book_record_in_primo(book_name):
     '''Open MBP Wrocław catalog "Primo" in headless mode through
     Selenium Webdriver. Find the named book or return fixed error.'''
-    # opts = Options()
-    # opts.headless = True
+    opts = Options()
+    opts.headless = True
 
     driver = webdriver.Chrome()
     driver.get("https://primo-48mbp.hosted.exlibrisgroup.com/primo-explore/search?vid=48MBP_VIEW&lang=pl_PL")
